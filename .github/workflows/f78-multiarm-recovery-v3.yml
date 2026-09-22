@@ -1,0 +1,22 @@
+name: F78 Multiarm Recovery V3
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'simulation/f78_multiarm_recovery_v3.py'
+      - '.github/workflows/f78-multiarm-recovery-v3.yml'
+permissions:
+  contents: read
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run multi-arm recovery and degraded case
+        run: python simulation/f78_multiarm_recovery_v3.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: f78-multiarm-recovery-v3
+          path: out/*.json
+          retention-days: 14
