@@ -1,0 +1,22 @@
+name: F78 Real Numerical Space Robot Simulation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'simulation/f78_free_floating_arm.py'
+      - '.github/workflows/f78-real-numerical-simulation.yml'
+permissions:
+  contents: read
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute numerical physics simulation
+        run: python simulation/f78_free_floating_arm.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: f78-real-numerical-simulation
+          path: out/*.json
+          retention-days: 14
