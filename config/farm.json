@@ -1,0 +1,25 @@
+{
+  "schema": "cerebron-farm-78-v1",
+  "farm_id": 78,
+  "name": "ARCHITECTON SPACE ROBOTICS LAB",
+  "status": "BOOTSTRAP_REAL_REPOSITORY",
+  "mission": "space robotics digital twin, microgravity locomotion, multi-arm manipulation, orbital assembly, maintenance and failure simulation",
+  "integration": {
+    "orchestrator": "F76 CEREBRON CORE",
+    "reality_gate": "F72",
+    "final_fusion": "AFAH"
+  },
+  "evidence_rules": [
+    "REALITY > COHERENCE",
+    "EVIDENCE > CONFIDENCE",
+    "CLAIM <= EVIDENCE",
+    "SIMULATION != TEST",
+    "VERIFY BEFORE COMMIT"
+  ],
+  "capability_status": {
+    "repository": "VERIFIED",
+    "simulation_runtime": "NOT_YET_VERIFIED",
+    "physical_robot": "NOT_CONNECTED",
+    "neural_training": "NOT_DEMONSTRATED"
+  }
+}
